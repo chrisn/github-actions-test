@@ -28,10 +28,10 @@ jobs:
           node-version: 16.x
           registry-url: https://registry.npmjs.org/
       - run: npm ci
-     - name: Sets env vars for latest release
+      - name: Sets env vars for latest release
         run: echo "NPM_TAG=latest" >> $GITHUB_ENV
         if: ${{ !contains(github.ref, 'beta') }}
-     - name: Sets env vars for beta release
+      - name: Sets env vars for beta release
         run: echo "NPM_TAG=beta" >> $GITHUB_ENV
         if: ${{ contains(github.ref, 'beta') ))
       - name: Publish latest
