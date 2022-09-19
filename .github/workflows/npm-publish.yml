@@ -33,7 +33,7 @@ jobs:
         if: ${{ !contains(github.ref, 'beta') }}
       - name: Sets env vars for beta release
         run: echo "NPM_TAG=beta" >> $GITHUB_ENV
-        if: ${{ contains(github.ref, 'beta') ))
+        if: ${{ contains(github.ref, 'beta') }}
       - name: Publish latest
         run: echo npm publish --tag ${{ env.NPM_TAG }}
         env:
