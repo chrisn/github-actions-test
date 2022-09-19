@@ -28,6 +28,7 @@ jobs:
           node-version: 16.x
           registry-url: https://registry.npmjs.org/
       - run: npm ci
-      - run: echo npm publish ${{ github.ref }} ${{ contains(github.ref, 'beta') }}
+      - run: echo npm publish ${{ github.ref }}
+        if: contains(github.ref, 'beta') == false
         env:
           NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
